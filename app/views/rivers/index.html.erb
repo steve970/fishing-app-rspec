@@ -1,0 +1,11 @@
+What river are you fishing?
+
+<%= link_to "Add a New River", new_river_path %>
+
+List of Rivers
+
+<% @rivers.each do |river| %>
+
+  <%= link_to "#{river.name}", river_path(river) %><%= ", #{river.city}, #{river.state}" %>
+
+<% end %>

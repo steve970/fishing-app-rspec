@@ -1,0 +1,30 @@
+Welcome to My Fishing App
+
+<% if @user.errors.any? %>
+  <%= pluralize(@user.errors.count, 'error') %>, you fucked up, retry because of the following:
+  <% @user.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+<%= form_for @user, url: signup_path do |f| %>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.text_field :password_confirmation %>
+
+  <%= f.submit "Sign Up" %>
+  <%= link_to "Already a User?", root_path %>
+
+<% end %>

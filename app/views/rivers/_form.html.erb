@@ -1,0 +1,15 @@
+<%= form_for @river do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+
+  <%= f.submit name_of_button %>
+  <%= link_to "GO BACK TO MORE RIVERS, YEAH!", rivers_path %>
+
+<% end %>  

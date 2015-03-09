@@ -1,0 +1,7 @@
+This is a bad ass river, you should definitely go drop a line in!
+
+<%= @river.name %>, <%= @river.city %>, <%= @river.state %>
+
+<%= link_to 'Edit River Info', edit_river_path(@river) %>
+<%= link_to 'Delete River', @rivers_path, method: :delete, data: {confirm: 'I hate it when we don\'t take care of the environment, don\'t you?'} %>
+<%= link_to 'Back to Rivers Homepage', rivers_path(@rivers) %>
