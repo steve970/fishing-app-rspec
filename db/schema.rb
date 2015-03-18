@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308181407) do
+ActiveRecord::Schema.define(version: 20150317202627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fishes", force: :cascade do |t|
+    t.string  "species"
+    t.string  "length"
+    t.integer "river_id"
+  end
 
   create_table "rivers", force: :cascade do |t|
     t.string "name"

@@ -1,16 +1,17 @@
 require 'rails_helper'
 
 feature 'my fishing app' do
-  let(:user) do
-    User.create(first_name: 'Jennifer', last_name: 'H', email: 'jennifer@gschool.com', password:'password')
+
+  before do
+    User.destroy_all
   end
 
   scenario 'can add a new river to the directory' do
+    
+
     visit root_path
 
-    fill_in :email, with: user.email
-    fill_in :password, with: user.password
-    click_on 'Sign In'
+    sign_in
 
     expect(current_path).to eq rivers_path
 
@@ -29,13 +30,12 @@ feature 'my fishing app' do
   end
 
   scenario 'can update an existing river from the show page' do
+    
     river = create_river
 
     visit root_path
+    sign_in
 
-    fill_in :email, with: user.email
-    fill_in :password, with: user.password
-    click_on 'Sign In'
 
     expect(current_path).to eq rivers_path
     click_link 'Blue River'
@@ -55,13 +55,11 @@ feature 'my fishing app' do
   end
 
   scenario 'can delete an existing river from the show page' do
+    
     river = create_river
 
     visit root_path
-
-    fill_in :email, with: user.email
-    fill_in :password, with: user.password
-    click_on 'Sign In'
+    sign_in
 
     expect(current_path).to eq rivers_path
     click_link 'Blue River'

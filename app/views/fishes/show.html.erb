@@ -1,0 +1,7 @@
+Species: <%= @fish.species %>
+Length: <%= @fish.length %>
+
+
+<%= link_to 'Back', river_path(@river) %>
+<%= link_to 'Edit', edit_river_fish_path(@river, @fish) %>
+<%= link_to 'Delete', river_fish_path(@river, @fish), method: :delete %>

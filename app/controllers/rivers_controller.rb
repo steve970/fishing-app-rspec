@@ -8,6 +8,7 @@ class RiversController < ApplicationController
 
   def show
     @river = River.find(params[:id])
+    @fishes = Fish.all
   end
 
   def new
